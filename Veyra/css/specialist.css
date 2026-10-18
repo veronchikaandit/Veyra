@@ -1,0 +1,485 @@
+.main__specialist {
+    width: 100%;
+    background-color: #ffffff;
+
+    display: grid;
+    grid-template-columns: minmax(280px, 550px) minmax(300px, 600px);
+
+    align-items: center;
+    gap: clamp(60px, 8vw, 180px);
+
+    padding:
+        clamp(40px, 6vw, 80px)
+        clamp(22px, 5vw, 80px);
+}
+
+
+/* КАРТИНКА — ЛІВОРУЧ */
+
+.specialist__img {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.specialist__img img {
+    width: min(100%, 550px);
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+    display: block;
+
+    border-radius: clamp(20px, 3vw, 30px);
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.specialist__img img:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ТЕКСТ — ПРАВОРУЧ */
+
+.specialist__bloks {
+    width: min(100%, 600px);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+/* ТЕКСТ */
+
+.specialist__text {
+    width: 100%;
+}
+
+.specialist__text > p {
+    margin: 0 0 12px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(13px, 1.2vw, 18px);
+    font-weight: 400;
+    line-height: 1.5;
+
+    color: #6f6f6f;
+}
+
+.specialist__text h1 {
+    width: 100%;
+    margin: 0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 300;
+    line-height: 1.25;
+
+    color: #393939;
+}
+
+
+/* ПУНКТИ */
+
+.specialist__section {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.section__item {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 30px 1fr;
+
+    column-gap: 20px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #E8E4E0;
+
+    transition:
+        transform 0.25s ease,
+        padding-left 0.25s ease;
+}
+
+
+/* ЦИФРА */
+
+.section__item span {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+
+    width: 30px;
+    height: 30px;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+
+    color: #9A969F;
+    background-color: #F5F3F4;
+
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ЗАГОЛОВОК ПУНКТУ */
+
+.section__item h4 {
+    grid-column: 2;
+
+    margin: 0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    color: #393939;
+}
+
+
+/* ОПИС */
+
+.section__item p {
+    grid-column: 2;
+
+    margin: 5px 0 0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+
+    color: #6f6f6f;
+}
+
+
+/* АНІМАЦІЯ */
+
+.section__item:hover {
+    transform: translateX(6px);
+    padding-left: 5px;
+}
+
+
+/* КНОПКА */
+
+.speacialist__button {
+    width: 100%;
+}
+
+.speacialist__button .btn1 {
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.speacialist__button .btn1:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   ≤ 1200px
+======================================== */
+
+@media (max-width: 1200px) {
+
+    .main__specialist {
+        grid-template-columns:
+            minmax(240px, 44%)
+            minmax(0, 1fr);
+
+        gap: 50px;
+
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .specialist__img img {
+        width: 100%;
+    }
+
+    .specialist__text h1 {
+        font-size: clamp(24px, 3vw, 32px);
+    }
+
+    .specialist__text > p {
+        font-size: 14px;
+    }
+
+    .section__item {
+        column-gap: 15px;
+    }
+
+    .section__item p {
+        font-size: 13px;
+    }
+}
+
+
+/* ========================================
+   ≤ 1000px
+   КАРТИНКА ЩЕ ЛІВОРУЧ
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .main__specialist {
+        grid-template-columns:
+            minmax(220px, 42%)
+            minmax(0, 1fr);
+
+        gap: 30px;
+        padding: 50px 30px;
+    }
+
+    .specialist__img {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+    }
+
+    .specialist__img img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .specialist__bloks {
+        grid-column: 2;
+        grid-row: 1;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .specialist__text h1 {
+        font-size: clamp(21px, 3vw, 27px);
+    }
+
+    .specialist__text > p {
+        font-size: 13px;
+    }
+
+    .section__item {
+        column-gap: 13px;
+        padding: 12px 0;
+    }
+
+    .section__item span {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .section__item h4 {
+        font-size: 14px;
+    }
+
+    .section__item p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+}
+
+
+/* ========================================
+   ≤ 850px
+   КАРТИНКУ ПОВНІСТЮ ХОВАЄМО
+======================================== */
+
+@media (max-width: 850px) {
+
+    .main__specialist {
+        display: block;
+        padding:
+            50px
+            clamp(25px, 6vw, 50px);
+    }
+
+    .specialist__img {
+        display: none;
+    }
+
+    .specialist__bloks {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .specialist__text h1 {
+        font-size: clamp(24px, 5vw, 30px);
+        line-height: 1.25;
+    }
+
+    .specialist__text > p {
+        font-size: 14px;
+    }
+
+    .section__item p {
+        font-size: 14px;
+    }
+}
+
+
+/* ========================================
+   ≤ 700px
+======================================== */
+
+@media (max-width: 700px) {
+
+    .main__specialist {
+        padding:
+            45px
+            clamp(20px, 6vw, 35px);
+    }
+
+    .specialist__bloks {
+        width: 100%;
+    }
+
+    .specialist__text h1 {
+        font-size: clamp(24px, 7vw, 30px);
+    }
+
+    .section__item {
+        column-gap: 15px;
+        padding: 13px 0;
+    }
+
+    .section__item h4 {
+        font-size: 14px;
+    }
+
+    .section__item p {
+        font-size: 13px;
+    }
+}
+
+
+/* ========================================
+   ≤ 450px
+======================================== */
+
+@media (max-width: 450px) {
+
+    .main__specialist {
+        padding: 35px 18px;
+    }
+
+    .specialist__text > p {
+        font-size: 13px;
+    }
+
+    .specialist__text h1 {
+        font-size: 25px;
+        line-height: 1.3;
+    }
+
+    .section__item {
+        column-gap: 13px;
+        padding: 12px 0;
+    }
+
+    .section__item span {
+        width: 25px;
+        height: 25px;
+        font-size: 11px;
+    }
+
+    .section__item h4 {
+        font-size: 13px;
+    }
+
+    .section__item p {
+        font-size: 12px;
+    }
+}
+
+
+/* ========================================
+   ≤ 380px
+======================================== */
+
+@media (max-width: 380px) {
+
+    .main__specialist {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .specialist__text h1 {
+        font-size: 22px;
+    }
+
+    .specialist__text > p {
+        font-size: 12px;
+    }
+
+    .section__item p {
+        font-size: 12px;
+    }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .specialist__img img,
+    .section__item,
+    .speacialist__button .btn1 {
+        transition: none;
+    }
+
+    .specialist__img img:hover {
+        transform: none;
+    }
+
+    .section__item:hover {
+        transform: none;
+        padding-left: 0;
+    }
+
+    .speacialist__button .btn1:hover {
+        transform: none;
+    }
+}
+/* PRO overrides */
+.specialist__text h2{width:100%;margin:0;font-family:'Manrope',sans-serif;font-size:clamp(28px,3vw,38px);font-weight:800;letter-spacing:-.5px;line-height:1.2;color:#2E2A33;}
+.main__specialist{max-width:1280px;margin:0 auto;}
+.btn-note{margin:10px 0 0;font-size:12.5px;color:#9A969F;}
+.cln-icon{display:inline-flex !important;}

@@ -1,0 +1,181 @@
+/* =========================
+   ADMIN (admin.html)
+========================= */
+
+.admin-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin: 18px 0;
+}
+
+
+.admin-tab {
+    padding: 9px 15px;
+
+    border: 1px solid #E2DFE4;
+    border-radius: 100px;
+
+    background: #fff;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #555;
+
+    cursor: pointer;
+}
+
+
+.admin-tab.active {
+    background: #2E2A33;
+    border-color: #2E2A33;
+
+    color: #fff;
+}
+
+
+.admin-list {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.admin-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 2px;
+
+    border-bottom: 1px solid #F0EDF1;
+}
+
+
+.admin-row:last-child {
+    border-bottom: 0;
+}
+
+
+.admin-row__info {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+
+.admin-row__info strong {
+    font-size: 14px;
+
+    color: #2E2A33;
+}
+
+
+.admin-row__info span {
+    font-size: 12.5px;
+
+    color: #9A969F;
+}
+
+
+.admin-check {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    flex-shrink: 0;
+
+    font-size: 12px;
+
+    color: #6f6f6f;
+
+    cursor: pointer;
+}
+
+
+.admin-check input {
+    width: 17px;
+    height: 17px;
+
+    accent-color: #6C5B8E;
+
+    cursor: pointer;
+}
+
+
+.admin-select {
+    flex-shrink: 0;
+
+    height: 38px;
+
+    padding: 0 10px;
+
+    border: 1px solid #E2DFE4;
+    border-radius: 10px;
+
+    background: #fff;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    color: #333;
+}
+
+
+.admin-del {
+    flex-shrink: 0;
+
+    padding: 9px 13px;
+
+    border: 1px solid #F0C9C2;
+    border-radius: 10px;
+
+    background: #FDEEEC;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+
+    color: #B0493B;
+
+    cursor: pointer;
+}
+
+
+.admin-del:hover {
+    background: #FADFDC;
+}
+
+
+.admin-error {
+    margin: 12px 0 0 !important;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    background: #FDEEEC;
+
+    color: #B0493B !important;
+
+    font-size: 12.5px !important;
+
+    word-break: break-word;
+}
+
+
+.admin-row .specialist-card__button {
+    flex-shrink: 0;
+}
+
+
+@media (max-width: 650px) {
+    .admin-row {
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ціни — Veyra</title>
+
+    <link rel="stylesheet" href="../css/price.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232E2A33'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='18' font-weight='700' fill='%23C9B8E8' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+
+<body>
+<a href="../index.html" class="back-home">
+    ← На головну
+</a>
+<div class="wrapper">
+    <div class="wrapper__title">
+        <p>Для спеціалістів</p>
+        <h1>Оберіть свій тариф</h1>
+        <span>
+            Почніть безкоштовно або оберіть більше можливостей
+            для розвитку своєї справи.
+        </span>
+    </div>
+
+    <div class="wrapper__carts">
+        <!-- БЕЗКОШТОВНО -->
+
+        <div class="carts__cart">
+            <div class="cart__top">
+                <p class="cart__name">Старт</p>
+                <div class="cart__price">
+                    0 грн <span>/ міс.</span>
+                </div>
+                <p class="cart__description">
+                    Для тих, хто хоче спробувати Veyra та почати роботу.
+                </p>
+            </div>
+            <ul class="cart__list">
+                <li>1 послуга на сторінці</li>
+                <li>До 20 записів на місяць</li>
+                <li>Сторінка, портфоліо та відгуки</li>
+                <li>Чат із клієнтами</li>
+            </ul>
+            <button class="btn" data-plan="start">
+                Почати безкоштовно
+            </button>
+        </div>
+
+        <!-- PRO -->
+        <div class="carts__cart cart__pro">
+            <div class="cart__badge">
+                Популярний
+            </div>
+            <div class="cart__top">
+                <p class="cart__name">
+                    Професійний
+                </p>
+                <div class="cart__price">
+                    300 грн <span>/ міс.</span>
+                </div>
+                <p class="cart__description">
+                    Для спеціалістів, яким потрібно більше інструментів
+                    для роботи з клієнтами.
+                </p>
+            </div>
+            <ul class="cart__list">
+                <li>Безліміт послуг на сторінці</li>
+                <li>Безліміт записів на місяць</li>
+                <li>Все з тарифу Старт</li>
+                <li>Значок PRO в каталозі та профілі</li>
+            </ul>
+            <button class="btn" data-plan="pro">
+                Обрати тариф
+            </button>
+        </div>
+        <!-- БІЗНЕС -->
+        <div class="carts__cart">
+            <div class="cart__top">
+                <p class="cart__name">
+                    Бізнес
+                </p>
+                <div class="cart__price">
+                    900 грн <span>/ міс.</span>
+                </div>
+                <p class="cart__description">
+                    Для невеликих студій та команд, які працюють разом.
+                </p>
+
+            </div>
+            <ul class="cart__list">
+                <li>Все з тарифу Професійний</li>
+                <li>До 5 учасників команди — скоро</li>
+                <li>Спільний календар — скоро</li>
+                <li>Пріоритетні оновлення — скоро</li>
+            </ul>
+            <button class="btn" data-plan="business">
+                Обрати тариф
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/veyra-backend.js"></script>
+<script src="../js/script.js"></script>
+<script>
+(function(){
+  setTimeout(function(){
+    if(window.VeyraBackend && window.VeyraBackend.lastError){
+      var el = document.createElement('div');
+      el.style.cssText = 'position:fixed;top:10px;left:10px;right:10px;z-index:10000;background:#FDEEEC;border:1px solid #B0493B;color:#B0493B;padding:12px;border-radius:8px;font-size:13px;box-shadow:0 4px 12px rgba(0,0,0,0.15);';
+      el.innerHTML = '<strong>⚠️ Firebase не налаштовано:</strong> ' + window.VeyraBackend.lastError + '<br><small>Сайт працює в локальному режимі (localStorage). Для Google-входу та хмари виконайте кроки з файлу FIREBASE_SETUP.md.</small>';
+      el.style.maxWidth = '600px';
+      el.style.margin = '0 auto';
+      document.body.appendChild(el);
+      setTimeout(function(){ el.style.display = 'none'; }, 10000);
+    }
+  }, 2000);
+})();
+</script>
+
+</body>
+</html>

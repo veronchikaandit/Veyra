@@ -1,0 +1,391 @@
+/* ========================================
+   PROFESSIONALS
+======================================== */
+
+.main__profession {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(50px, 10vw, 180px);
+    padding: 120px 60px 100px;
+    width: 100%;
+}
+
+
+/* ========================================
+   TEXT
+======================================== */
+
+.profession__text {
+    width: clamp(300px, 32vw, 500px);
+    flex-shrink: 0;
+    padding: 20px;
+}
+
+.profession__text h4 {
+    margin: 0;
+    color: #6f6f6f;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.profession__text h2 {
+    margin: 0;
+    padding-top: 10px;
+    color: rgb(57, 57, 57);
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(30px, 3vw, 40px);
+    font-weight: 300;
+    line-height: 1.15;
+}
+
+.profession__text p {
+    margin: 0;
+    padding-top: 25px;
+    color: #6f6f6f;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   CARDS CONTAINER
+======================================== */
+
+.profession__carts {
+    flex: 1;
+    min-width: 0;
+    padding: 20px;
+}
+
+
+/* ========================================
+   CARDS GRID
+======================================== */
+
+.at__all {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(130px, 1fr)
+    );
+    gap: 20px;
+    width: 100%;
+}
+
+
+/* ========================================
+   CARD LINK
+======================================== */
+
+.block {
+    width: 100%;
+    min-width: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.carts {
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #d5c9b5;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+/* ========================================
+   CARD HOVER
+======================================== */
+
+.block:hover .carts {
+    transform: translateY(-6px);
+
+    border-color: #C9B8E8;
+
+    box-shadow:
+        0 12px 30px rgba(56, 52, 61, 0.10);
+
+    background-color: #fff;
+}
+
+
+/* ========================================
+   CARD CLICK
+======================================== */
+
+.block:active .carts {
+    transform: translateY(-2px) scale(0.98);
+
+    box-shadow:
+        0 5px 15px rgba(56, 52, 61, 0.08);
+}
+
+
+/* ========================================
+   CARD CONTENT
+======================================== */
+
+.carts h2 {
+    margin: 0 0 5px;
+
+    color: #38343D;
+
+    font-size: clamp(22px, 2vw, 30px);
+    font-weight: 600;
+}
+
+.carts h3 {
+    margin: 0;
+
+    color: rgb(57, 57, 57);
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.carts p {
+    margin: 5px 0 0;
+
+    color: #6f6f6f;
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .main__profession {
+        gap: 50px;
+
+        padding: 100px 40px 80px;
+    }
+
+    .profession__text {
+        width: 300px;
+
+        padding: 15px;
+    }
+
+    .profession__carts {
+        padding: 15px;
+    }
+
+    .at__all {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(120px, 1fr)
+        );
+
+        gap: 15px;
+    }
+
+    .carts {
+        min-height: 130px;
+
+        padding: 15px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 800px) {
+
+    .main__profession {
+        flex-direction: column;
+
+        gap: 35px;
+
+        padding: 80px 30px 70px;
+    }
+
+    .profession__text {
+        width: 100%;
+
+        padding: 0;
+    }
+
+    .profession__text h2 {
+        font-size: clamp(28px, 7vw, 36px);
+    }
+
+    .profession__carts {
+        width: 100%;
+
+        padding: 0;
+    }
+
+    .at__all {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(130px, 1fr)
+        );
+
+        gap: 15px;
+    }
+
+    .carts {
+        min-height: 130px;
+    }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 500px) {
+
+    .main__profession {
+        gap: 25px;
+
+        padding: 60px 22px 60px;
+    }
+
+    .profession__text h4 {
+        font-size: 13px;
+    }
+
+    .profession__text h2 {
+        font-size: 28px;
+    }
+
+    .profession__text p {
+        padding-top: 18px;
+
+        font-size: 13px;
+    }
+
+    .at__all {
+        grid-template-columns: repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+        gap: 12px;
+    }
+
+    .carts {
+        min-height: 120px;
+
+        padding: 12px;
+
+        border-radius: 13px;
+    }
+
+    .carts h2 {
+        font-size: 23px;
+    }
+
+    .carts h3 {
+        font-size: 13px;
+    }
+
+    .carts p {
+        font-size: 10px;
+    }
+
+}
+
+
+/* ========================================
+   VERY SMALL MOBILE
+======================================== */
+
+@media (max-width: 360px) {
+
+    .main__profession {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .at__all {
+        gap: 10px;
+    }
+
+    .carts {
+        min-height: 110px;
+
+        padding: 10px;
+    }
+
+    .carts h2 {
+        font-size: 21px;
+    }
+
+    .carts h3 {
+        font-size: 12px;
+    }
+
+    .carts p {
+        font-size: 9px;
+    }
+
+}
+
+/* PRO: SVG icons instead of emoji */
+.cart-icon {
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #F4EFF9;
+    border: 1px solid #E6DBF3;
+    color: #6C5B8E;
+    border-radius: 14px;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    transition: background .25s ease, transform .25s ease;
+}
+
+.cart-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.block:hover .cart-icon {
+    background: #2E2A33;
+    color: #fff;
+    border-color: #2E2A33;
+    transform: scale(1.05);
+}
+
+.carts--more .cart-icon {
+    background: #2E2A33;
+    color: #C9B8E8;
+    border-color: #2E2A33;
+}
+
+.main__profession {
+    max-width: 1280px;
+    margin: 0 auto;
+}

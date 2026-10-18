@@ -1,0 +1,166 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.main__profesional {
+    width: 100%;
+    padding: 0;
+    background-color: #F9F9F9;
+    overflow: hidden;
+}
+
+.profesional__text {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(10px, 4vw, 80px);
+    text-align: center;
+    padding: 25px 15px;
+    position: relative;
+}
+
+.profesional__text h4 {
+    margin: 0;
+    color: #9A969F;
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(9px, 1.1vw, 16px);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.profesional__text p {
+    margin: 0;
+    color: #929292;
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(8px, 0.9vw, 13px);
+    white-space: nowrap;
+}
+
+
+.profesional__text::before,
+.profesional__text::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 100vw;
+    height: 1px;
+    background-color: #d4d4d4;
+    transform: translateX(-50%);
+}
+
+.profesional__text::before {
+    top: 0;
+}
+
+.profesional__text::after {
+    bottom: 0;
+}
+
+
+/* ========================================
+   ≤ 900px
+======================================== */
+
+@media (max-width: 900px) {
+
+    .profesional__text {
+        gap: clamp(12px, 4vw, 40px);
+        padding: 23px 10px;
+    }
+
+    .profesional__text h4 {
+        font-size: 13px;
+    }
+
+    .profesional__text p {
+        font-size: 11px;
+    }
+}
+
+
+/* ========================================
+   ≤ 745px
+======================================== */
+
+@media (max-width: 745px) {
+
+    .profesional__text {
+        gap: clamp(8px, 3vw, 30px);
+        padding: 22px 8px;
+    }
+
+    .profesional__text h4 {
+        font-size: 12px;
+    }
+
+    .profesional__text p {
+        font-size: 10px;
+    }
+}
+
+
+/* ========================================
+   ≤ 600px
+======================================== */
+
+@media (max-width: 600px) {
+
+    .profesional__text {
+        gap: clamp(6px, 2.5vw, 20px);
+        padding: 22px 5px;
+    }
+
+    .profesional__text h4 {
+        font-size: 11px;
+    }
+
+    .profesional__text p {
+        font-size: 9px;
+    }
+}
+
+
+/* ========================================
+   ≤ 480px
+======================================== */
+
+@media (max-width: 480px) {
+
+    .profesional__text {
+        gap: 8px;
+        padding: 22px 4px;
+    }
+
+    .profesional__text h4 {
+        font-size: 10px;
+    }
+
+    .profesional__text p {
+        font-size: 8px;
+    }
+}
+
+
+/* ========================================
+   ≤ 390px
+======================================== */
+
+@media (max-width: 390px) {
+
+    .profesional__text {
+        gap: 7px;
+        padding: 22px 3px;
+    }
+
+    .profesional__text h4 {
+        font-size: 9px;
+    }
+
+    .profesional__text p {
+        font-size: 8px;
+    }
+}

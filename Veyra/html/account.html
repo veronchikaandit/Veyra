@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Мій акаунт — Veyra</title>
+
+    <meta
+        name="description"
+        content="Особистий кабінет Veyra: профіль, оголошення, обране."
+    >
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232E2A33'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='18' font-weight='700' fill='%23C9B8E8' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+
+    <link
+        rel="stylesheet"
+        href="../css/specialists.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/account.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/auth.css"
+    >
+</head>
+
+<body>
+
+    <header class="specialists-header">
+
+        <a
+            href="../index.html"
+            class="specialists-logo"
+        >
+            Veyra
+        </a>
+
+        <nav class="specialists-nav">
+            <a
+                href="specialists.html"
+                class="home-link"
+            >
+                Каталог
+            </a>
+
+            <a
+                href="../index.html"
+                class="home-link"
+            >
+                На головну
+            </a>
+        </nav>
+
+    </header>
+
+
+    <main class="specialists-page">
+
+        <div id="accountRoot"></div>
+
+    </main>
+
+
+    <script src="../js/veyra-backend.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+    (function(){
+      setTimeout(function(){
+        if(window.VeyraBackend && window.VeyraBackend.lastError){
+          var el = document.createElement('div');
+          el.style.cssText = 'position:fixed;top:10px;left:10px;right:10px;z-index:10000;background:#FDEEEC;border:1px solid #B0493B;color:#B0493B;padding:12px;border-radius:8px;font-size:13px;box-shadow:0 4px 12px rgba(0,0,0,0.15);';
+          el.innerHTML = '<strong>⚠️ Firebase не налаштовано:</strong> ' + window.VeyraBackend.lastError + '<br><small>Сайт працює в локальному режимі (localStorage). Для Google-входу та хмари виконайте кроки з файлу FIREBASE_SETUP.md.</small>';
+          el.style.maxWidth = '600px';
+          el.style.margin = '0 auto';
+          document.body.appendChild(el);
+          setTimeout(function(){ el.style.display = 'none'; }, 10000);
+        }
+      }, 2000);
+    })();
+
+</body>
+
+</html>

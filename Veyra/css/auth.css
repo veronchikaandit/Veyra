@@ -1,0 +1,418 @@
+/* ========================================
+   VEYRA AUTH MODAL (shared)
+   Підключається на всіх сторінках
+======================================== */
+
+#veyraAuthModal {
+    display: none;
+}
+
+#veyraAuthModal.active {
+    display: block;
+}
+
+.veyra-auth-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(30, 30, 30, 0.35);
+    backdrop-filter: blur(8px);
+}
+
+.veyra-auth-modal {
+    position: relative;
+    width: min(440px, 100%);
+    max-height: calc(100dvh - 40px);
+    overflow-y: auto;
+    padding: 38px;
+    background: #FAF7F2;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.veyra-auth-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    border: 0;
+    background: transparent;
+    font-size: 28px;
+    color: #777;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.veyra-auth-close:hover {
+    color: #2E2A33;
+}
+
+.veyra-auth-header {
+    margin-bottom: 25px;
+}
+
+.veyra-auth-header h2 {
+    margin: 0 0 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    color: #292929;
+}
+
+.veyra-auth-header p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: #777;
+}
+
+.veyra-auth-hint {
+    margin: 0 0 18px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #eee8f7;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: #594675;
+}
+
+.veyra-google-btn {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid #dedad4;
+    border-radius: 13px;
+    background: #fff;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.veyra-google-btn:hover {
+    border-color: #b9a6d9;
+}
+
+.veyra-google-btn span {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.veyra-auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 22px 0;
+    color: #aaa;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+}
+
+.veyra-auth-divider::before,
+.veyra-auth-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #dedad4;
+}
+
+#loginForm,
+#registerForm,
+#bookingForm,
+#adminLoginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#loginForm label,
+#registerForm label,
+#bookingForm label,
+#adminLoginForm label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: #555;
+}
+
+#loginForm input,
+#registerForm input,
+#bookingForm input,
+#bookingForm select,
+#adminLoginForm input {
+    width: 100%;
+    box-sizing: border-box;
+    height: 46px;
+    padding: 0 14px;
+    border: 1px solid #dedad4;
+    border-radius: 12px;
+    background: #fff;
+    outline: none;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+}
+
+#loginForm input:focus,
+#registerForm input:focus,
+#bookingForm input:focus,
+#bookingForm select:focus,
+#adminLoginForm input:focus {
+    border-color: #b9a6d9;
+}
+
+.veyra-auth-error {
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #fdecec;
+    color: #a33;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+}
+
+.veyra-auth-submit {
+    width: 100%;
+    height: 48px;
+    margin-top: 4px;
+    border: 0;
+    border-radius: 13px;
+    background: #C9B8E8;
+    color: #292929;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.veyra-auth-submit:hover {
+    background: #BCA9E0;
+}
+
+.veyra-auth-submit + .veyra-auth-submit {
+    margin-top: 10px;
+    background: #fff;
+    border: 1px solid #dedad4;
+}
+
+.veyra-auth-switch {
+    margin: 20px 0 0;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: #777;
+}
+
+.veyra-auth-switch button {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: #66528b;
+    font: inherit;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.veyra-role-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.veyra-role-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px;
+    border: 1px solid #dedad4;
+    border-radius: 16px;
+    background: #fff;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.veyra-role-card:hover {
+    border-color: #b9a6d9;
+    transform: translateY(-1px);
+}
+
+.veyra-role-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #eee8f7;
+    font-size: 19px;
+}
+
+.veyra-role-card strong {
+    display: block;
+    margin-bottom: 5px;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    color: #292929;
+}
+
+.veyra-role-card p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #777;
+}
+
+.veyra-account-role {
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #eee8f7;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: #594675;
+}
+
+.veyra-logout {
+    width: 100%;
+    margin-top: 12px;
+    padding: 13px;
+    border: 1px solid #dedad4;
+    border-radius: 12px;
+    background: transparent;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: #666;
+    cursor: pointer;
+}
+
+.veyra-logout:hover {
+    border-color: #b9a6d9;
+}
+
+/* Чат */
+
+.chat-modal {
+    display: flex;
+    flex-direction: column;
+
+    height: min(560px, calc(100dvh - 80px));
+}
+
+
+.chat-list {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    min-height: 200px;
+
+    overflow-y: auto;
+
+    margin-bottom: 14px;
+    padding: 4px 2px;
+}
+
+
+.chat-empty {
+    margin: auto 0;
+
+    text-align: center;
+
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+
+    color: #9A969F;
+}
+
+
+.chat-msg {
+    align-self: flex-start;
+
+    max-width: 82%;
+}
+
+
+.chat-msg p {
+    margin: 0 0 3px;
+    padding: 10px 13px;
+
+    border-radius: 4px 14px 14px 14px;
+
+    background: #fff;
+    border: 1px solid #EDE8E2;
+
+    font-family: "Inter", sans-serif;
+    font-size: 13.5px;
+    line-height: 1.5;
+
+    color: #333;
+}
+
+
+.chat-msg span {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+
+    color: #B4AFB8;
+}
+
+
+.chat-msg--mine {
+    align-self: flex-end;
+}
+
+
+.chat-msg--mine p {
+    border-radius: 14px 4px 14px 14px;
+
+    background: #EFE8F8;
+    border-color: #E0D3F2;
+}
+
+
+.chat-form {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+}
+
+
+.chat-form input {
+    flex: 1;
+}
+
+
+.chat-send {
+    width: 48px !important;
+    height: 46px !important;
+    margin-top: 0 !important;
+    flex-shrink: 0;
+
+    font-size: 17px !important;
+}
+
+@media (max-width: 500px) {
+    .veyra-auth-overlay {
+        padding: 12px;
+    }
+
+    .veyra-auth-modal {
+        width: 100%;
+        max-height: calc(100dvh - 24px);
+        overflow-y: auto;
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статистика — Veyra</title>
+    <meta name="description" content="Загальна статистика платформи Veyra: фахівці, бронювання, оцінки та акаунти.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232E2A33'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='18' font-weight='700' fill='%23C9B8E8' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <header id="siteHeader">
+                <div class="header__logo">
+                    <a href="../index.html" aria-label="Veyra — на головну">Veyra<span class="logo-dot">.</span></a>
+                </div>
+                <nav class="header__menu" aria-label="Головна навігація">
+                    <ul class="items">
+                        <li><a href="../index.html" class="list">На головну</a></li>
+                        <li><a href="specialists.html" class="list">Фахівці</a></li>
+                        <li><a href="price.html" class="list">Тарифи</a></li>
+                        <li><a href="contact.html" class="list">Контакти</a></li>
+                    </ul>
+                </nav>
+                <div class="header__button">
+                    <div class="user-menu-wrapper">
+                        <button class="btn" id="loginBtn" type="button">Увійти</button>
+                        <div class="user-menu" id="userMenu">
+                            <button type="button" data-ugo="account.html">Мій акаунт</button>
+                            <button type="button" data-ugo="account.html#accMyBookings">Мої бронювання <span class="user-menu__badge" id="umBookings">0</span></button>
+                            <button type="button" data-ugo="account.html#accIncoming" id="umOrdersItem">Замовлення <span class="user-menu__badge" id="umOrders">0</span></button>
+                            <button type="button" data-ugo="account.html#accMessages">Повідомлення</button>
+                            <button type="button" data-ugo="specialists.html?fav=1">Обрані <span class="user-menu__badge" id="umFavs">0</span></button>
+                            <button type="button" id="umChangeAccount">Змінити акаунт</button>
+                            <button type="button" id="umLogout">Вийти</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-menu" id="loginMenu" role="menu">
+                    <p class="login-menu__title">Увійти як</p>
+                    <button class="login-option" type="button">
+                        <div class="login-option__text">
+                            <span id="specialistLogin">Спеціаліст</span>
+                            <p>Керувати своєю справою</p>
+                        </div>
+                    </button>
+                    <button class="login-option" type="button">
+                        <div class="login-option__text">
+                            <span id="clientLogin">Клієнт</span>
+                            <p>Бронювати та замовляти</p>
+                        </div>
+                    </button>
+                </div>
+                <div class="mobile-menu" id="mobileMenu">
+                    <ul class="mobile-menu__items">
+                        <li><a class="des" href="../index.html">На головну</a></li>
+                        <li><a class="des" href="specialists.html">Фахівці</a></li>
+                        <li><a class="des" href="price.html">Тарифи</a></li>
+                        <li><a class="des" href="contact.html">Контакти</a></li>
+                    </ul>
+                    <button class="mobile-login-btn" id="mobileLoginBtn" type="button">Увійти</button>
+                </div>
+                <button class="burger" id="burgerBtn" type="button" aria-label="Відкрити меню" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </header>
+
+            <main class="specialists-page" style="max-width: 900px;">
+                <div class="specialists-hero">
+                    <span class="eyebrow">Статистика платформи</span>
+                    <h1>Реальні цифри Veyra</h1>
+                    <p>Всі дані оновлюються в реальному часі з_localStorage та Firebase.</p>
+                </div>
+
+                <div class="main-block__numbers" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; text-align: center;">
+                    <div class="blocks" style="background: #fff; padding: 24px; border-radius: 16px; border: 1px solid rgba(56,52,61,0.09); box-shadow: 0 8px 28px rgba(56,52,61,0.10);">
+                        <h2 id="stat-specialists">0</h2>
+                        <p style="color: #6f6f6f; margin-top: 8px;">Фахівців на платформі</p>
+                    </div>
+                    <div class="blocks" style="background: #fff; padding: 24px; border-radius: 16px; border: 1px solid rgba(56,52,61,0.09); box-shadow: 0 8px 28px rgba(56,52,61,0.10);">
+                        <h2 id="stat-bookings">0</h2>
+                        <p style="color: #6f6f6f; margin-top: 8px;">Бронювань оформлено</p>
+                    </div>
+                    <div class="blocks" style="background: #fff; padding: 24px; border-radius: 16px; border: 1px solid rgba(56,52,61,0.09); box-shadow: 0 8px 28px rgba(56,52,61,0.10);">
+                        <h2 id="stat-rating">0<span class="star">★</span></h2>
+                        <p style="color: #6f6f6f; margin-top: 8px;">Середня оцінка сервісу</p>
+                    </div>
+                    <div class="blocks" style="background: #fff; padding: 24px; border-radius: 16px; border: 1px solid rgba(56,52,61,0.09); box-shadow: 0 8px 28px rgba(56,52,61,0.10);">
+                        <h2 id="stat-users">0</h2>
+                        <p style="color: #6f6f6f; margin-top: 8px;">Зареєстрованих акаунтів</p>
+                    </div>
+                </div>
+
+                <section class="profile-section" style="max-width: 900px; margin: 40px auto;">
+                    <h2>Фахівці за категоріями</h2>
+                    <div id="stats-by-category" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 16px;"></div>
+                </section>
+
+                <section class="profile-section" style="max-width: 900px; margin: 40px auto;">
+                    <h2>Розподіл оцінок</h2>
+                    <div id="stats-rating-dist" style="display: flex; flex-direction: column; gap: 8px; margin-top: 16px;"></div>
+                    <p style="color: #9A969F; font-size: 13px;">Оцінки базуються на реальних відгуках клієнтів.</p>
+                </section>
+
+                <section class="profile-section" style="max-width: 900px; margin: 40px auto;">
+                    <h2>Останні реєстрації</h2>
+                    <div id="stats-recent" style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px;"></div>
+                    <p style="color: #9A969F; font-size: 13px;">Показуємо останні 10 зареєстрованих користувачів.</p>
+                </section>
+            </main>
+
+            <footer>
+                <div class="footer__blocks footer__grid">
+                    <div class="footer__brand">
+                        <h2>Veyra<span class="logo-dot">.</span></h2>
+                        <p>Універсальна платформа для бронювання послуг незалежних фахівців.</p>
+                    </div>
+                    <nav class="footer__col" aria-label="Платформа">
+                        <h3>Платформа</h3>
+                        <a href="../index.html">Головна</a>
+                        <a href="specialists.html">Фахівці</a>
+                        <a href="price.html">Тарифи</a>
+                    </nav>
+                    <nav class="footer__col" aria-label="Ресурси">
+                        <h3>Ресурси</h3>
+                        <a href="contact.html">Контакти</a>
+                        <a href="admin.html">Адмінка</a>
+                    </nav>
+                </div>
+                <div class="footer__bottom">
+                    <p>© 2026 Veyra. Всі права захищені.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="../js/veyra-backend.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+    (function(){
+      setTimeout(function(){
+        if(window.VeyraBackend && window.VeyraBackend.lastError){
+          var el = document.createElement('div');
+          el.style.cssText = 'position:fixed;top:10px;left:10px;right:10px;z-index:10000;background:#FDEEEC;border:1px solid #B0493B;color:#B0493B;padding:12px;border-radius:8px;font-size:13px;box-shadow:0 4px 12px rgba(0,0,0,0.15);';
+          el.innerHTML = '<strong>⚠️ Firebase не налаштовано:</strong> ' + window.VeyraBackend.lastError + '<br><small>Сайт працює в локальному режимі (localStorage). Для Google-входу та хмари виконайте кроки з файлу FIREBASE_SETUP.md.</small>';
+          el.style.maxWidth = '600px';
+          el.style.margin = '0 auto';
+          document.body.appendChild(el);
+          setTimeout(function(){ el.style.display = 'none'; }, 10000);
+        }
+      }, 2000);
+    })();
+    <script>
+    (function(){
+      function fmt(n){ return n.toLocaleString('uk-UA'); }
+      function safeParse(value, fallback){
+        try { var p = JSON.parse(value); return p ?? fallback; } catch { return fallback; }
+      }
+      function getSpecialists(){ var s = safeParse(localStorage.getItem('veyraSpecialists'), []); return Array.isArray(s) ? s.filter(function(x){ return x.visible !== false; }) : []; }
+      function getUsers(){ var u = safeParse(localStorage.getItem('veyraUsers'), []); return Array.isArray(u) ? u : []; }
+      function getBookings(){ var b = safeParse(localStorage.getItem('veyraBookings'), []); return Array.isArray(b) ? b : []; }
+      function getReviews(){ var r = safeParse(localStorage.getItem('veyraReviews'), []); return Array.isArray(r) ? r : []; }
+
+      function render(){
+        var specialists = getSpecialists();
+        var users = getUsers();
+        var bookings = getBookings();
+        var reviews = getReviews();
+
+        // Big numbers
+        document.getElementById('stat-specialists').textContent = fmt(specialists.length);
+        document.getElementById('stat-bookings').textContent = fmt(bookings.length);
+        document.getElementById('stat-users').textContent = fmt(users.length);
+
+        var ratings = reviews.map(function(r){ return Number(r.stars) || 0; }).filter(function(x){ return x > 0; });
+        var avg = ratings.length ? (ratings.reduce(function(a,b){ return a + b; }, 0) / ratings.length).toFixed(1) : '0';
+        document.getElementById('stat-rating').innerHTML = fmt(avg) + '<span class="star">★</span>';
+
+        // By category
+        var catBox = document.getElementById('stats-by-category');
+        catBox.innerHTML = '';
+        var cats = {};
+        specialists.forEach(function(s){ var c = s.profession || 'Інше'; cats[c] = (cats[c] || 0) + 1; });
+        Object.entries(cats).sort(function(a,b){ return b[1] - a[1]; }).forEach(function(entry){
+          var div = document.createElement('div');
+          div.style.cssText = 'background:#fff;padding:16px;border-radius:12px;border:1px solid rgba(56,52,61,0.09);';
+          div.innerHTML = '<div style="font-size:13px;color:#9A969F;">' + entry[0] + '</div><div style="font-size:20px;font-weight:700;color:#2E2A33;">' + entry[1] + '</div>';
+          catBox.appendChild(div);
+        });
+
+        // Rating distribution
+        var distBox = document.getElementById('stats-rating-dist');
+        distBox.innerHTML = '';
+        [5,4,3,2,1].forEach(function(star){
+          var count = reviews.filter(function(r){ return Number(r.stars) === star; }).length;
+          var pct = reviews.length ? Math.round((count / reviews.length) * 100) : 0;
+          var barW = reviews.length ? Math.min(100, pct) : 0;
+          var row = document.createElement('div');
+          row.style.cssText = 'display:flex;align-items:center;gap:12px;';
+          row.innerHTML = '<span style="width:30px;color:#2E2A33;font-weight:600;">' + star + ' ★</span><div style="flex:1;height:10px;background:#F0EDF1;border-radius:5px;overflow:hidden;"><div style="height:100%;width:' + barW + '%;background:#C9B8E8;"></div></div><span style="width:30px;color:#9A969F;font-size:13px;text-align:right;">' + count + '</span>';
+          distBox.appendChild(row);
+        });
+
+        // Recent users
+        var recentBox = document.getElementById('stats-recent');
+        recentBox.innerHTML = '';
+        var recent = users.slice().sort(function(a,b){ return new Date(b.createdAt || 0) - new Date(a.createdAt || 0); }).slice(0, 10);
+        recent.forEach(function(u){
+          var row = document.createElement('div');
+          row.style.cssText = 'display:flex;align-items:center;gap:12px;padding:12px;background:#fff;border-radius:10px;border:1px solid #F0EDF1;';
+          var role = u.role === 'specialist' ? 'Спеціаліст' : u.role === 'client' ? 'Клієнт' : 'Без ролі';
+          var d = u.createdAt ? new Date(u.createdAt).toLocaleDateString('uk-UA') : '';
+          row.innerHTML = '<div style="width:36px;height:36px;border-radius:50%;background:#EFE8F8;display:flex;align-items:center;justify-content:center;font-weight:700;color:#6C5B8E;">' + (String(u.name || '?')[0] || '?').toUpperCase() + '</div><div><div style="font-size:14px;color:#2E2A33;font-weight:600;">' + (u.name || 'Невідомий') + '</div><div style="font-size:12px;color:#9A969F;">' + role + ' • ' + d + '</div></div><div style="margin-left:auto;font-size:12px;color:#6f6f6f;">' + (u.email || '') + '</div>';
+          recentBox.appendChild(row);
+        });
+      }
+
+      render();
+      window.addEventListener('storage', render);
+      window.addEventListener('veyra:cloud-sync', render);
+    })();
+    </script>
+</body>
+</html>

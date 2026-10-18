@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти — Veyra</title>
+    <meta name="description" content="Зв'яжіться з командою Veyra: email, телефон, соцмережі.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232E2A33'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='18' font-weight='700' fill='%23C9B8E8' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+<body>
+    <a href="../index.html" class="back-home">
+    ← На головну
+</a>
+      <header>
+                <div class="header__logo">
+                    <a href="../index.html">Veyra</a>
+                </div>
+                <div class="header__menu">
+                    <ul class="items">
+                        <li><a class="list" href="../index.html#how">Як працює</a></li>
+                        <li><a class="list" href="../index.html#specialist">Для професіоналів</a></li>
+                        <a class="list" href="contact.html">Контакти</a>
+                        <li><a class="list" href="price.html" id="priceLink">Ціна</a></li>
+                    </ul>
+                </div>
+                <div class="header__button">
+                    <div class="user-menu-wrapper">
+                        <button class="btn" id="loginBtn">Увійти</button>
+                        <div class="user-menu" id="userMenu">
+                            <button type="button" data-ugo="account.html">Мій акаунт</button>
+                            <button type="button" data-ugo="account.html#accMyBookings">Мої бронювання <span class="user-menu__badge" id="umBookings">0</span></button>
+                            <button type="button" data-ugo="account.html#accIncoming" id="umOrdersItem">Замовлення <span class="user-menu__badge" id="umOrders">0</span></button>
+                            <button type="button" data-ugo="account.html#accMessages">Повідомлення</button>
+                            <button type="button" data-ugo="specialists.html?fav=1">Обрані <span class="user-menu__badge" id="umFavs">0</span></button>
+                            <button type="button" id="umChangeAccount">Змінити акаунт</button>
+                            <button type="button" id="umLogout">Вийти</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-menu" id="loginMenu">  
+                    <p class="login-menu__title">Увійти як</p> 
+                    <button class="login-option">
+                        <div class="login-option__text">
+                            <span id="specialistLogin">Спеціаліст</span>
+                      
+                        <p>Керувати своєю справою</p>
+                        
+                        </div>
+                        
+                    </button>
+                    <button class="login-option">
+                        <div class="login-option__text">
+                            <span id="clientLogin">Клієнт</span>
+                            
+                             <p>Бронювати та замовляти</p>
+                           
+                        </div>
+                       
+                     </button>
+                    
+                </div>
+                <div class="mobile-menu" id="mobileMenu">
+                    <ul class="mobile-menu__items">
+                        <li><a class="des" href="../index.html#how">Як працює</a></li>
+                        <li><a class="des" href="../index.html#specialist">Для професіоналів</a></li>
+                        <a class="des" href="contact.html">Контакти</a>
+                        <li><a class="des" href="price.html">Ціна</a></li>
+                    </ul>
+                
+                    <button class="mobile-login-btn" id="mobileLoginBtn">Увійти</button>
+                   
+                </div>
+                <button class="burger" id="burgerBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </header>
+            <main>
+    <section class="contact" id="contact">
+        <div class="contact__container">
+
+            <div class="contact__info">
+
+                <div class="contact__intro">
+                    <h2 class="contact__title">Зв'язок з нами</h2>
+                    <p class="contact__text">
+                        Маєте питання? Зв'яжіться з нами!
+                    </p>
+                </div>
+
+                <div class="contact__details">
+
+                    <div class="contact__item">
+                        <div class="contact__icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div>
+                            <span class="contact__label">Email</span>
+                            <a href="mailto:veronchik.and.it@gmail.com">
+                                veronchik.and.it@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact__item">
+                        <div class="contact__icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <div>
+                            <span class="contact__label">Телефон</span>
+                            <a href="tel:+380932461979">
+                                +380 93 246 19 79
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+   
+                <div class="contact__social">
+                    <p>Зв'яжіться з нами в соціальних мережах:</p>
+
+                    <div class="social__icons">
+                        <a
+                            href="https://www.instagram.com/v.and.it?stkn=OTlxa3JvZm1ldnk%3D&utm_source=qr"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a
+                            href="https://www.tiktok.com/@v.and.it0?_r=1&_t=ZS-99hD9CG1sfN"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="TikTok"
+                        >
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+
+                        <a
+                            href="https://t.me/veronichk_aaa"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Telegram">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Права частина -->
+            <div class="contact__form">
+
+               <form id="contactForm">
+    
+    <h2 class="form__title">Написати нам</h2>
+
+    <div class="form__group">
+        <label for="name">Ваше ім'я</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Ваше ім'я"
+            autocomplete="name"
+            required
+        >
+    </div>
+
+    <div class="form__group">
+        <label for="email">Ваш email</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Ваш email"
+            autocomplete="email"
+            required
+        >
+    </div>
+
+    <div class="form__group">
+        <label for="phone">Ваш номер телефону</label>
+        <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Ваш номер телефону"
+            autocomplete="tel"
+        >
+    </div>
+
+    <div class="form__group">
+        <label for="message">Ваше повідомлення</label>
+        <textarea
+            id="message"
+            name="message"
+            placeholder="Ваше повідомлення"
+            rows="5"
+            required
+        ></textarea>
+    </div>
+
+    <button type="submit" class="form__button">
+        Відправити
+        <i class="fa-solid fa-paper-plane"></i>
+    </button>
+
+    <p class="form__status" id="formStatus"></p>
+
+</form>
+
+            </div>
+
+        </div>
+    </section>
+</main>
+            
+        <script src="../js/veyra-backend.js"></script>
+        <script src="../js/script.js"></script>
+        <script>
+        (function(){
+          setTimeout(function(){
+            if(window.VeyraBackend && window.VeyraBackend.lastError){
+              var el = document.createElement('div');
+              el.style.cssText = 'position:fixed;top:10px;left:10px;right:10px;z-index:10000;background:#FDEEEC;border:1px solid #B0493B;color:#B0493B;padding:12px;border-radius:8px;font-size:13px;box-shadow:0 4px 12px rgba(0,0,0,0.15);';
+              el.innerHTML = '<strong>⚠️ Firebase не налаштовано:</strong> ' + window.VeyraBackend.lastError + '<br><small>Сайт працює в локальному режимі (localStorage). Для Google-входу та хмари виконайте кроки з файлу FIREBASE_SETUP.md.</small>';
+              el.style.maxWidth = '600px';
+              el.style.margin = '0 auto';
+              document.body.appendChild(el);
+              setTimeout(function(){ el.style.display = 'none'; }, 10000);
+            }
+          }, 2000);
+        })();
+</body>
+</html>

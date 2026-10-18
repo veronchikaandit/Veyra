@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Створити профіль — Veyra</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/create.css"
+    >
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232E2A33'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='18' font-weight='700' fill='%23C9B8E8' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+    <link
+        rel="stylesheet"
+        href="../css/auth.css"
+    >
+</head>
+
+
+<body>
+
+    <main class="profile-create">
+
+        <div class="profile-create__container">
+
+
+            <!-- ВЕРХ СТОРІНКИ -->
+
+            <div class="profile-create__top">
+
+                <a
+                    href="../index.html"
+                    class="back-link"
+                >
+                    ← Назад
+                </a>
+
+
+                <p class="profile-create__label">
+                    Veyra
+                </p>
+
+
+                <h1 id="pageTitle">
+                    Створіть свою сторінку
+                </h1>
+
+
+                <p class="profile-create__subtitle">
+                    Додайте інформацію про себе,
+                    послуги та свої роботи.
+                    Ваш профіль зможуть бачити клієнти Veyra.
+                </p>
+
+            </div>
+
+
+
+            <!-- ФОРМА -->
+
+            <form id="specialistForm">
+
+
+                <!-- 01 -->
+
+                <section class="form-section">
+
+                    <div class="form-section__heading">
+
+                        <span class="number">
+                            01
+                        </span>
+
+
+                        <div>
+
+                            <h2>
+                                Основна інформація
+                            </h2>
+
+                            <p>
+                                Розкажіть клієнтам про себе
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Ім’я спеціаліста *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Наприклад: Марія"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="profession">
+                                Професія *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="profession"
+                                placeholder="Наприклад: Майстер манікюру"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="city">
+                                Місто *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                placeholder="Ужгород"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="workplace">
+                                Місце роботи
+                            </label>
+
+                            <input
+                                type="text"
+                                id="workplace"
+                                placeholder="Назва салону або студії"
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-group form-group--full">
+
+                            <label for="address">
+                                Адреса
+                            </label>
+
+                            <input
+                                type="text"
+                                id="address"
+                                placeholder="Наприклад: вул. Корзо, 10"
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Телефон для клієнтів
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="+380 __ ___ __ __"
+                                autocomplete="tel"
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-group form-group--full">
+
+                            <label for="description">
+                                Про себе *
+                            </label>
+
+                            <textarea
+                                id="description"
+                                rows="6"
+                                placeholder="Розкажіть про себе, свій досвід та роботу..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- 02 -->
+
+                <section class="form-section">
+
+                    <div class="form-section__heading">
+
+                        <span class="number">
+                            02
+                        </span>
+
+
+                        <div>
+
+                            <h2>
+                                Фото профілю
+                            </h2>
+
+                            <p>
+                                Основне фото вашої сторінки
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="photo-upload">
+
+
+                        <div
+                            class="photo-preview"
+                            id="profilePhotoPreview"
+                        >
+
+                            <span>
+                                Фото
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="photo-upload__content">
+
+                            <label
+                                for="profilePhoto"
+                                class="upload-button"
+                            >
+                                Обрати фото
+                            </label>
+
+
+                            <input
+                                type="file"
+                                id="profilePhoto"
+                                accept="image/*"
+                                hidden
+                            >
+
+
+                            <p>
+                                Для тестової версії фото
+                                зберігатиметься у браузері.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- 03 -->
+
+                <section class="form-section">
+
+                    <div class="form-section__heading">
+
+                        <span class="number">
+                            03
+                        </span>
+
+
+                        <div>
+
+                            <h2>
+                                Послуги
+                            </h2>
+
+                            <p>
+                                Додайте послуги,
+                                які можуть замовити клієнти
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div id="servicesContainer"></div>
+
+
+
+                    <button
+                        type="button"
+                        id="addServiceBtn"
+                        class="add-button"
+                    >
+                        + Додати послугу
+                    </button>
+
+                </section>
+
+
+
+                <!-- 04 -->
+
+                <section class="form-section">
+
+                    <div class="form-section__heading">
+
+                        <span class="number">
+                            04
+                        </span>
+
+
+                        <div>
+
+                            <h2>
+                                Портфоліо
+                            </h2>
+
+                            <p>
+                                Додайте фотографії своїх робіт
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <label
+                        for="portfolioInput"
+                        class="portfolio-upload"
+                    >
+
+                        <span class="portfolio-upload__plus">
+                            +
+                        </span>
+
+
+                        <strong>
+                            Додати фото робіт
+                        </strong>
+
+
+                        <p>
+                            Можна вибрати декілька фотографій
+                        </p>
+
+                    </label>
+
+
+
+                    <input
+                        type="file"
+                        id="portfolioInput"
+                        accept="image/*"
+                        multiple
+                        hidden
+                    >
+
+
+
+                    <div
+                        id="portfolioPreview"
+                        class="portfolio-preview"
+                    ></div>
+
+                </section>
+
+
+
+                <!-- ВИДИМІСТЬ -->
+
+                <section class="form-section">
+
+                    <div class="visibility-row">
+
+
+                        <div>
+
+                            <h2>
+                                Показувати профіль клієнтам
+                            </h2>
+
+                            <p>
+                                Якщо вимкнути,
+                                профіль залишиться у вашому акаунті,
+                                але клієнти його не бачитимуть.
+                            </p>
+
+                        </div>
+
+
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="visible"
+                                checked
+                            >
+
+                            <span class="switch-slider"></span>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- КНОПКИ -->
+
+                <div class="form-actions">
+
+
+                    <button
+                        type="button"
+                        id="deleteProfileBtn"
+                        class="delete-button"
+                        hidden
+                    >
+                        Видалити профіль
+                    </button>
+
+
+
+                    <button
+                        type="submit"
+                        class="save-button"
+                    >
+
+                        <span id="saveButtonText">
+                            Створити профіль
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ВАЖЛИВО:
+         script.js ПЕРШИЙ,
+         crate.js ДРУГИЙ -->
+
+    <script src="../js/veyra-backend.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+    (function(){
+      setTimeout(function(){
+        if(window.VeyraBackend && window.VeyraBackend.lastError){
+          var el = document.createElement('div');
+          el.style.cssText = 'position:fixed;top:10px;left:10px;right:10px;z-index:10000;background:#FDEEEC;border:1px solid #B0493B;color:#B0493B;padding:12px;border-radius:8px;font-size:13px;box-shadow:0 4px 12px rgba(0,0,0,0.15);';
+          el.innerHTML = '<strong>⚠️ Firebase не налаштовано:</strong> ' + window.VeyraBackend.lastError + '<br><small>Сайт працює в локальному режимі (localStorage). Для Google-входу та хмари виконайте кроки з файлу FIREBASE_SETUP.md.</small>';
+          el.style.maxWidth = '600px';
+          el.style.margin = '0 auto';
+          document.body.appendChild(el);
+          setTimeout(function(){ el.style.display = 'none'; }, 10000);
+        }
+      }, 2000);
+    })();
+  
+
+</body>
+
+</html>

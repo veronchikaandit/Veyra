@@ -1,0 +1,554 @@
+
+/* ========================================
+   CLIENTS
+======================================== */
+
+.main__clients {
+    width: 100%;
+   background-color: #FAF7F2;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 550px);
+    align-items: center;
+    gap: clamp(50px, 8vw, 140px);
+    padding: clamp(50px, 7vw, 90px)
+             clamp(25px, 5vw, 80px);
+}
+
+.clients__bloks {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.clients__text {
+    width: 100%;
+    max-width: 650px;
+}
+
+.clients__text > p {
+    margin: 0 0 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(13px, 1.2vw, 18px);
+    font-weight: 400;
+    line-height: 1.5;
+    color: #6f6f6f;
+}
+
+.clients__text h1 {
+    width: 100%;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 300;
+    line-height: 1.25;
+    color: #393939;
+}
+
+.clients__section {
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+.cln__item {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    column-gap: 20px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #E8E4E0;
+
+    transition:
+        transform 0.25s ease,
+        padding-left 0.25s ease;
+}
+
+
+/* Цифра */
+
+.cln__item span {
+    grid-row: span 2;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+
+    color: #9A969F;
+    background-color: #F5F3F4;
+
+    border-radius: 50px;
+}
+
+
+/* Заголовок */
+
+.cln__item h4 {
+    margin: 0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    color: #393939;
+}
+
+
+/* Опис */
+
+.cln__item p {
+    margin: 5px 0 0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.45;
+
+    color: #6f6f6f;
+}
+
+
+/* Анімація */
+
+.cln__item:hover {
+    transform: translateX(5px);
+    padding-left: 5px;
+}
+
+
+/* ========================================
+   BUTTON
+======================================== */
+.clients__button {
+    margin-top: 30px;
+}
+
+.clients__button .btn1 {
+    padding: 12px 26px;
+
+    border-radius: 14px;
+    border: none;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.clients__button .btn1:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ========================================
+   IMAGE — ПРАВОРУЧ
+======================================== */
+
+.clients__img {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.clients__img img {
+    width: min(100%, 550px);
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+    display: block;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.clients__img img:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ========================================
+   CLIENTS — ADAPTIVE
+   ІДЕНТИЧНО ДО SPECIALIST
+======================================== */
+
+
+/* ========================================
+   ≤ 1600px
+======================================== */
+
+@media (max-width: 1600px) {
+
+    .main__clients {
+        gap: clamp(60px, 7vw, 140px);
+
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+
+/* ========================================
+   ≤ 1200px
+======================================== */
+
+@media (max-width: 1200px) {
+
+    .main__clients {
+        grid-template-columns:
+            minmax(260px, 45%)
+            minmax(280px, 1fr);
+
+        gap: clamp(40px, 5vw, 80px);
+
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .clients__img img {
+        width: 100%;
+    }
+
+    .clients__text h1 {
+        font-size: clamp(24px, 3vw, 32px);
+    }
+
+    .clients__text > p {
+        font-size: 14px;
+    }
+
+    .cln__item {
+        column-gap: 15px;
+    }
+
+    .cln__item p {
+        font-size: 13px;
+    }
+}
+
+
+/* ========================================
+   ≤ 1000px
+   ЩЕ ДВА СТОВПЦІ
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .main__clients {
+        grid-template-columns:
+            minmax(220px, 42%)
+            minmax(0, 1fr);
+
+        gap: 30px;
+
+        padding: 50px 30px;
+    }
+
+    .clients__bloks {
+        grid-column: 1;
+        grid-row: 1;
+
+        width: 100%;
+        min-width: 0;
+    }
+
+    .clients__img {
+        grid-column: 2;
+        grid-row: 1;
+
+        width: 100%;
+    }
+
+    .clients__img img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .clients__text h1 {
+        font-size: clamp(21px, 3vw, 27px);
+        line-height: 1.25;
+    }
+
+    .clients__text > p {
+        font-size: 13px;
+    }
+
+    .cln__item {
+        column-gap: 13px;
+        padding: 12px 0;
+    }
+
+    .cln__item span {
+        width: 28px;
+        height: 28px;
+
+        font-size: 12px;
+    }
+
+    .cln__item h4 {
+        font-size: 14px;
+    }
+
+    .cln__item p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+}
+
+
+/* ========================================
+   ≤ 850px
+   КАРТИНКА ПОВНІСТЮ ЗНИКАЄ
+======================================== */
+
+@media (max-width: 850px) {
+
+    .main__clients {
+        display: block;
+        width: 100%;
+        padding: 50px clamp(25px, 6vw, 50px);
+    }
+
+    .clients__img {
+        display: none;
+    }
+
+     .clients__bloks {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .clients__text {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .clients__text h1 {
+        width: 100%;
+
+        font-size: clamp(24px, 5vw, 30px);
+        line-height: 1.25;
+    }
+
+    .clients__text > p {
+        font-size: 14px;
+    }
+
+    .clients__section {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .cln__item {
+        width: 100%;
+
+        column-gap: 15px;
+        padding: 13px 0;
+    }
+
+    .cln__item h4 {
+        font-size: 14px;
+    }
+
+    .cln__item p {
+        font-size: 14px;
+        line-height: 1.45;
+    }
+    /* ТІЛЬКИ КНОПКА */
+    .clients__button {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .clients__button .btn1 {
+        width: 100%;
+    }
+}
+
+
+/* ========================================
+   ≤ 700px
+======================================== */
+
+@media (max-width: 700px) {
+
+    .main__clients {
+        padding:
+            45px
+            clamp(20px, 6vw, 35px);
+    }
+
+    .clients__bloks {
+        width: 100%;
+    }
+
+    .clients__text h1 {
+        font-size: clamp(24px, 7vw, 30px);
+        line-height: 1.25;
+    }
+
+    .clients__text > p {
+        font-size: 14px;
+    }
+
+    .clients__section {
+        margin-top: 25px;
+    }
+
+    .cln__item {
+        grid-template-columns: 30px 1fr;
+
+        column-gap: 15px;
+        padding: 13px 0;
+    }
+
+    .cln__item span {
+        width: 28px;
+        height: 28px;
+
+        font-size: 12px;
+    }
+
+    .cln__item h4 {
+        font-size: 14px;
+    }
+
+    .cln__item p {
+        font-size: 13px;
+    }
+
+    .clients__button {
+        margin-top: 30px;
+    }
+}
+
+
+/* ========================================
+   ≤ 450px
+======================================== */
+
+@media (max-width: 450px) {
+
+    .main__clients {
+        padding: 35px 18px;
+    }
+
+    .clients__text h1 {
+        font-size: 25px;
+        line-height: 1.3;
+    }
+
+    .clients__text > p {
+        font-size: 13px;
+    }
+
+    .cln__item {
+        grid-template-columns: 25px 1fr;
+
+        column-gap: 13px;
+        padding: 12px 0;
+    }
+
+    .cln__item span {
+        width: 25px;
+        height: 25px;
+
+        font-size: 11px;
+    }
+
+    .cln__item h4 {
+        font-size: 13px;
+    }
+
+    .cln__item p {
+        font-size: 12px;
+    }
+}
+
+
+/* ========================================
+   ≤ 380px
+======================================== */
+
+@media (max-width: 380px) {
+
+    .main__clients {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .clients__text h1 {
+        font-size: 22px;
+    }
+
+    .clients__text > p {
+        font-size: 12px;
+    }
+
+    .cln__item p {
+        font-size: 12px;
+    }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .clients__img img,
+    .cln__item,
+    .clients__button .btn1 {
+        transition: none;
+    }
+
+    .clients__img img:hover,
+    .cln__item:hover,
+    .clients__button .btn1:hover {
+        transform: none;
+    }
+}
+
+
+/* PRO overrides */
+.clients__text h2{width:100%;margin:0;font-family:'Manrope',sans-serif;font-size:clamp(28px,3vw,38px);font-weight:800;letter-spacing:-.5px;line-height:1.2;color:#2E2A33;}
+.main__clients{max-width:1280px;margin:0 auto;}
+.cln-icon svg{width:16px;height:16px;}
+.cln__item span.cln-icon{background:#F4EFF9;color:#6C5B8E;border:1px solid #E6DBF3;}

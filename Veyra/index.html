@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veyra — платформа для бронювання послуг фахівців</title>
+    <meta name="description" content="Veyra — універсальна платформа для бронювання: створюйте професійну сторінку, приймайте онлайн-записи, демонструйте портфоліо та керуйте графіком в одному місці.">
+    <meta property="og:title" content="Veyra — Ваш час. Ваш простір. Ваш бізнес.">
+    <meta property="og:description" content="Онлайн-бронювання, сторінка фахівця, портфоліо та календар в одному естетичному просторі.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#FAF7F2">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232E2A33'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='18' font-weight='700' fill='%23C9B8E8' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <header id="siteHeader">
+                <div class="header__logo">
+                    <a href="index.html" aria-label="Veyra — на головну">Veyra<span class="logo-dot">.</span></a>
+                </div>
+                <nav class="header__menu" aria-label="Головна навігація">
+                    <ul class="items">
+                        <li><a href="#how" class="list">Як це працює</a></li>
+                        <li><a href="#specialist" class="list">Для фахівців</a></li>
+                        <li><a href="#professions" class="list">Категорії</a></li>
+                        <li><a href="html/price.html" id="priceLink" class="list">Тарифи</a></li>
+                        <li><a href="html/contact.html" class="list">Контакти</a></li>
+                        <li><a href="html/stats.html" class="list">Статистика</a></li>
+                    </ul>
+                </nav>
+                <div class="header__button">
+                    <div class="user-menu-wrapper">
+                        <button class="btn" id="loginBtn" type="button">Увійти</button>
+                        <div class="user-menu" id="userMenu">
+                            <button type="button" data-ugo="account.html">Мій акаунт</button>
+                            <button type="button" data-ugo="account.html#accMyBookings">Мої бронювання <span class="user-menu__badge" id="umBookings">0</span></button>
+                            <button type="button" data-ugo="account.html#accIncoming" id="umOrdersItem">Замовлення <span class="user-menu__badge" id="umOrders">0</span></button>
+                            <button type="button" data-ugo="account.html#accMessages">Повідомлення</button>
+                            <button type="button" data-ugo="specialists.html?fav=1">Обрані <span class="user-menu__badge" id="umFavs">0</span></button>
+                            <button type="button" id="umChangeAccount">Змінити акаунт</button>
+                            <button type="button" id="umLogout">Вийти</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-menu" id="loginMenu" role="menu">
+                    <p class="login-menu__title">Увійти як</p>
+                    <button class="login-option" type="button">
+                        <div class="login-option__text">
+                            <span id="specialistLogin">Спеціаліст</span>
+                            <p>Керувати своєю справою</p>
+                        </div>
+                    </button>
+                    <button class="login-option" type="button">
+                        <div class="login-option__text">
+                            <span id="clientLogin">Клієнт</span>
+                            <p>Бронювати та замовляти</p>
+                        </div>
+                    </button>
+                </div>
+                <div class="mobile-menu" id="mobileMenu">
+                    <ul class="mobile-menu__items">
+                        <li><a class="des" href="#how">Як це працює</a></li>
+                        <li><a class="des" href="#specialist">Для фахівців</a></li>
+                        <li><a class="des" href="#professions">Категорії</a></li>
+                        <li><a class="des" href="html/price.html">Тарифи</a></li>
+                        <li><a class="des" href="html/contact.html">Контакти</a></li>
+                    </ul>
+                    <button class="mobile-login-btn" id="mobileLoginBtn" type="button">Увійти</button>
+                </div>
+                <button class="burger" id="burgerBtn" type="button" aria-label="Відкрити меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </header>
+            <main>
+                <section class="main-block">
+                    <div class="main-block__title">
+                        <span class="hero-badge"><span class="hero-badge__pulse"></span>Платформа для незалежних фахівців</span>
+                        <h1>Ваш час.<br>Ваш простір.<br><span class="another">Ваш бізнес.</span></h1>
+                    </div>
+                    <div class="main-block__text">
+                        <p>
+                            <strong>VEYRA</strong> допомагає фахівцям приймати онлайн-бронювання,
+                            демонструвати роботи та керувати графіком —
+                            в одному зручному й естетичному просторі.
+                        </p>
+                    </div>
+                    <div class="main-block__buttons">
+                        <button class="btn1" type="button">
+                            Створити свою сторінку
+                            <span aria-hidden="true">→</span>
+                        </button>
+                        <button class="btn2" type="button">
+                            Переглянути спеціалістів
+                        </button>
+                        <p class="hero-micro">Безкоштовний старт · Без картки · За 5 хвилин</p>
+                    </div>
+
+                    <!-- CALENDAR -->
+                    <div class="main-block__calendar" aria-label="Демо-календар доступності">
+                        <div class="calendar-top-badge">
+                            <span class="live-dot"></span> Жива доступність
+                            <span class="calendar-top-hint">демо</span>
+                        </div>
+                        <div class="calendar-header">
+                            <button class="calendar__arrov" id="prevMonth" type="button" aria-label="Попередній місяць">←</button>
+                            <div class="calendar__month">
+                                <span id="monthName">Серпень</span>
+                                <span id="year">2026</span>
+                            </div>
+                            <button class="calendar__arrov" id="nextMonth" type="button" aria-label="Наступний місяць">→</button>
+                        </div>
+                        <div class="calendar__weekdays" aria-hidden="true">
+                            <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Нд</span>
+                        </div>
+                        <div class="calendar__days" id="calendarDays"></div>
+                        <div class="calendar-legend">
+                            <div class="legend__item"><span class="legend-dot available"></span><p>Вільно</p></div>
+                            <div class="legend__item"><span class="legend-dot busy"></span><p>Зайнято</p></div>
+                            <div class="legend__cta">Онлайн-запис 24/7</div>
+                        </div>
+                    </div>
+
+                    <!-- STATISTICS (real data from localStorage/Firebase) -->
+                    <div class="main-block__numbers">
+                        <div class="blocks">
+                            <h2 id="stat-specialists">0</h2>
+                            <p>Фахівців на платформі</p>
+                        </div>
+                        <div class="blocks">
+                            <h2 id="stat-bookings">0</h2>
+                            <p>Бронювань оформлено</p>
+                        </div>
+                        <div class="blocks">
+                            <h2 id="stat-rating">0<span class="star">★</span></h2>
+                            <p>Середня оцінка сервісу</p>
+                        </div>
+                        <div class="blocks">
+                            <h2 id="stat-users">0</h2>
+                            <p>Зареєстрованих акаунтів</p>
+                        </div>
+                    </div>
+                    <div class="hero-trust">
+                        <div class="hero-avatars" id="hero-avatars" aria-hidden="true"></div>
+                        <p id="hero-trust-text">Приєднуйтесь до спільноти фахівців та клієнтів</p>
+                    </div>
+                </section>
+
+                <div class="main__profesional">
+                    <div class="profesional__text">
+                        <h4>Нам довіряють</h4>
+                        <p>Кондитери</p>
+                        <p>Фотографи</p>
+                        <p>Репетитори</p>
+                        <p>Тренери</p>
+                        <p>Майстри краси</p>
+                    </div>
+                </div>
+
+                <section class="main__profession" id="professions">
+                    <div class="profession__text">
+                        <span class="eyebrow">Категорії</span>
+                        <h2>Одна платформа — для будь-якої професії</h2>
+                        <p>
+                            Печете торти, фотографуєте, викладаєте мови або тренуєте клієнтів —
+                            Veyra адаптується під ваш формат роботи: послуги, ціни, тривалість і онлайн-запис.
+                        </p>
+                        <a href="html/specialists.html" class="text-link">Переглянути всіх фахівців →</a>
+                    </div>
+                    <div class="profession__carts">
+                        <div class="at__all">
+                            <a class="block" href="html/specialists.html">
+                                <div class="carts">
+                                    <span class="cart-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21h16M5 21v-6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v6M12 13v-2M12 11a2.5 2.5 0 0 1 2.5-2.5M12 11a2.5 2.5 0 0 0-2.5-2.5M8 8.5h8M9 5.5h6"/></svg></span>
+                                    <h3>Кондитери</h3>
+                                    <p>Торти та десерти на замовлення</p>
+                                </div>
+                            </a>
+                            <a class="block" href="html/specialists.html">
+                                <div class="carts">
+                                    <span class="cart-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+                                    <h3>Фотографи</h3>
+                                    <p>Портрети та події</p>
+                                </div>
+                            </a>
+                            <a class="block" href="html/specialists.html">
+                                <div class="carts">
+                                    <span class="cart-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h13"/></svg></span>
+                                    <h3>Репетитори</h3>
+                                    <p>Мови та шкільні предмети</p>
+                                </div>
+                            </a>
+                            <a class="block" href="html/specialists.html">
+                                <div class="carts">
+                                    <span class="cart-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.5 6.5 4 4m0 0v3m0-3h3M17.5 17.5 20 20m0 0v-3m0 3h-3M7 17 17 7M9 5l-2 2m9 10 2 2M5 9l2-2m10 9 2 2"/></svg></span>
+                                    <h3>Тренери</h3>
+                                    <p>Персональні тренування</p>
+                                </div>
+                            </a>
+                            <a class="block" href="html/specialists.html">
+                                <div class="carts">
+                                    <span class="cart-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9zM19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/></svg></span>
+                                    <h3>Художники</h3>
+                                    <p>Живопис і дизайн</p>
+                                </div>
+                            </a>
+                            <a class="block" href="html/specialists.html">
+                                <div class="carts">
+                                    <span class="cart-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M8 7.5 20 19M8 16.5 20 5"/></svg></span>
+                                    <h3>Перукарі</h3>
+                                    <p>Стрижки та догляд</p>
+                                </div>
+                            </a>
+                            <a class="block" href="html/specialists.html">
+                                <div class="carts">
+                                    <span class="cart-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span>
+                                    <h3>Майстри краси</h3>
+                                    <p>Волосся та макіяж</p>
+                                </div>
+                            </a>
+                            <a class="block" href="html/specialists.html">
+                                <div class="carts carts--more">
+                                    <span class="cart-icon">✦</span>
+                                    <h3>Інше</h3>
+                                    <p>Будь-які послуги</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="how" id="how">
+                    <div class="how__inner">
+                        <span class="eyebrow eyebrow--center">Як це працює</span>
+                        <h2>Від сторінки до бронювання — за три кроки</h2>
+                        <p class="how__sub">Простий шлях для фахівця і зручний досвід для клієнта. Без дзвінків і листування вночі.</p>
+                        <div class="how__grid">
+                            <div class="how__card">
+                                <span class="how__num">01</span>
+                                <h3>Створіть сторінку</h3>
+                                <p>Профіль, послуги, ціни та портфоліо. Публікація займає близько 5 хвилин.</p>
+                            </div>
+                            <div class="how__card">
+                                <span class="how__num">02</span>
+                                <h3>Налаштуйте графік</h3>
+                                <p>Вкажіть доступні години. Клієнти бачать лише вільні слоти й бронюють онлайн.</p>
+                            </div>
+                            <div class="how__card">
+                                <span class="how__num">03</span>
+                                <h3>Приймайте клієнтів</h3>
+                                <p>Отримуйте записи, спілкуйтесь напряму та збирайте відгуки для репутації.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="specialist" class="main__specialist">
+                    <div class="specialist__img">
+                        <img src="./img/spc/specialist.jpg" alt="Фахівець за роботою — приклад профілю у Veyra" loading="lazy">
+                    </div>
+                    <div class="specialist__bloks">
+                        <div class="specialist__text">
+                            <span class="eyebrow">Для фахівців</span>
+                            <h2>Керуйте бізнесом в одному естетичному просторі</h2>
+                        </div>
+                        <div class="specialist__section">
+                            <div class="section__item">
+                                <span>1</span>
+                                <h4>Професійна сторінка за хвилини</h4>
+                                <p>Профіль, послуги, портфоліо та персональне посилання для соцмереж.</p>
+                            </div>
+                            <div class="section__item">
+                                <span>2</span>
+                                <h4>Календар і бронювання без хаосу</h4>
+                                <p>Клієнти бронюють самі. Ви контролюєте слоти, ціни та тривалість.</p>
+                            </div>
+                            <div class="section__item">
+                                <span>3</span>
+                                <h4>Зростання бази та репутації</h4>
+                                <p>Повторні записи, пряме спілкування та відгуки, що продають за вас.</p>
+                            </div>
+                        </div>
+                        <div class="speacialist__button">
+                            <button class="btn1" type="button">Почати безкоштовно →</button>
+                            <p class="btn-note">Безкоштовний тариф «Старт» · Скасування будь-коли</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="main__clients" id="clients">
+                    <div class="clients__bloks">
+                        <div class="clients__text">
+                            <span class="eyebrow">Для клієнтів</span>
+                            <h2>Знаходьте, бронюйте та спілкуйтесь — легко</h2>
+                            <p>Перевірені фахівці поруч, реальні роботи та запис у кілька кліків. Усе — в одному місці.</p>
+                        </div>
+                        <div class="clients__section">
+                            <div class="cln__item">
+                                <span class="cln-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+                                <div>
+                                    <h4>Пошук за категоріями</h4>
+                                    <p>Добірка фахівців у вашому місті за всіма видами послуг.</p>
+                                </div>
+                            </div>
+                            <div class="cln__item">
+                                <span class="cln-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4m8-4v4M3 10h18"/></svg></span>
+                                <div>
+                                    <h4>Бронювання за секунди</h4>
+                                    <p>Актуальна доступність і запис без телефонних дзвінків.</p>
+                                </div>
+                            </div>
+                            <div class="cln__item">
+                                <span class="cln-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z"/></svg></span>
+                                <div>
+                                    <h4>Пряме спілкування</h4>
+                                    <p>Повідомлення фахівцю щодо вашого запису — швидко та зручно.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clients__button">
+                            <button class="btn2" type="button">Знайти фахівця →</button>
+                        </div>
+                    </div>
+                    <div class="clients__img">
+                        <img src="./img/clients/stars.jpg" alt="Задоволені клієнти Veyra" loading="lazy">
+                    </div>
+                </section>
+
+                <section class="reviews">
+                    <div class="reviews__inner">
+                        <span class="eyebrow eyebrow--center">Відгуки</span>
+                        <h2>Фахівці, які вже працюють з Veyra</h2>
+                        <div class="reviews__grid">
+                            <blockquote class="review-card">
+                                <div class="review-stars" aria-label="Оцінка 5 з 5">★★★★★</div>
+                                <p>«Раніше записи губились у директі. Тепер клієнти бронюють самі, а я просто відкриваю календар зранку.»</p>
+                                <footer><strong>Марія К.</strong><span>кондитер, Львів</span></footer>
+                            </blockquote>
+                            <blockquote class="review-card">
+                                <div class="review-stars" aria-label="Оцінка 5 з 5">★★★★★</div>
+                                <p>«Сторінка виглядає дорожче за мій старий сайт. Портфоліо + ціни + запис — усе в одному посиланні.»</p>
+                                <footer><strong>Олександр В.</strong><span>фотограф, Київ</span></footer>
+                            </blockquote>
+                            <blockquote class="review-card">
+                                <div class="review-stars" aria-label="Оцінка 5 з 5">★★★★★</div>
+                                <p>«За місяць — 40+ записів без жодного дзвінка. Учням зручно, мені — спокійно.»</p>
+                                <footer><strong>Анна С.</strong><span>репетитор англійської, Ужгород</span></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="cta">
+                    <div class="cta__card">
+                        <span class="eyebrow eyebrow--light">Старт за 5 хвилин</span>
+                        <h2>Готові перетворити записи на систему?</h2>
+                        <p>Створіть свою сторінку безкоштовно. Додайте послуги, відкрийте календар — і приймайте перші бронювання вже сьогодні.</p>
+                        <div class="cta__buttons">
+                            <button class="btn1 btn1--light" type="button">Створити сторінку безкоштовно</button>
+                            <a class="cta__link" href="html/price.html">Переглянути тарифи →</a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <div class="footer__blocks footer__grid">
+                    <div class="footer__brand">
+                        <h2>Veyra<span class="logo-dot">.</span></h2>
+                        <p>Універсальна платформа для бронювання послуг незалежних фахівців.</p>
+                    </div>
+                    <nav class="footer__col" aria-label="Платформа">
+                        <h3>Платформа</h3>
+                        <a href="#how">Як це працює</a>
+                        <a href="#specialist">Для фахівців</a>
+                        <a href="#clients">Для клієнтів</a>
+                        <a href="html/specialists.html">Знайти фахівця</a>
+                    </nav>
+                    <nav class="footer__col" aria-label="Ресурси">
+                        <h3>Ресурси</h3>
+                        <a href="html/price.html">Тарифи</a>
+                        <a href="html/contact.html">Контакти</a>
+                        <a href="html/stats.html">Статистика</a>
+                        <a href="html/create.html">Створити сторінку</a>
+                    </nav>
+                    <div class="footer__col">
+                        <h3>Зв'язок</h3>
+                        <a href="mailto:veronchik.and.it@gmail.com">veronchik.and.it@gmail.com</a>
+                        <a href="tel:+380932461979">+380 93 246 19 79</a>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <p>© 2026 Veyra. Всі права захищені.</p>
+                    <div class="footer__text">
+                        <a href="#">Політика конфіденційності</a>
+                        <a href="#">Умови використання</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="js/veyra-backend.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+    // Показуємо помилку Firebase, якщо backend не налаштований
+    (function(){
+      setTimeout(function(){
+        if(window.VeyraBackend && window.VeyraBackend.lastError){
+          var el = document.createElement('div');
+          el.style.cssText = 'position:fixed;top:10px;left:10px;right:10px;z-index:10000;background:#FDEEEC;border:1px solid #B0493B;color:#B0493B;padding:12px;border-radius:8px;font-size:13px;z-index:9999;box-shadow:0 4px 12px rgba(0,0,0,0.15);';
+          el.innerHTML = '<strong>⚠️ Firebase не налаштовано:</strong> ' + window.VeyraBackend.lastError + '<br><small>Сайт працює в локальному режимі (localStorage). Для Google-входу та хмари виконайте кроки з файлу FIREBASE_SETUP.md.</small>';
+          el.style.maxWidth = '600px';
+          el.style.margin = '0 auto';
+          document.body.appendChild(el);
+          setTimeout(function(){ el.style.display = 'none'; }, 10000);
+        }
+      }, 2000);
+    })();
+
+    // Header shadow + counters + reveal (делікатні, не ламають основний script.js)
+    (function(){
+      var header = document.getElementById('siteHeader');
+      function onScroll(){ if(header) header.classList.toggle('scrolled', window.scrollY > 8); }
+      window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+      // Burger a11y
+      var burger = document.getElementById('burgerBtn');
+      if(burger){ burger.addEventListener('click', function(){ var exp = burger.classList.contains('active'); burger.setAttribute('aria-expanded', exp ? 'true' : 'false'); }); }
+      // Закриття мобільного меню по кліку на посилання
+      var mm = document.getElementById('mobileMenu');
+      if(mm){ mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ mm.classList.remove('active'); if(burger) burger.classList.remove('active'); }); }); }
+    })();
+
+    // ========================================
+    // REAL STATISTICS FROM LOCALSTORAGE / FIREBASE
+    // ========================================
+    (function(){
+      function fmt(n){ return n.toLocaleString('uk-UA'); }
+
+      function safeParse(value, fallback){
+        try { var p = JSON.parse(value); return p ?? fallback; } catch { return fallback; }
+      }
+
+      function getSpecialists(){
+        var s = safeParse(localStorage.getItem('veyraSpecialists'), []);
+        return Array.isArray(s) ? s : [];
+      }
+      function getUsers(){
+        var u = safeParse(localStorage.getItem('veyraUsers'), []);
+        return Array.isArray(u) ? u : [];
+      }
+      function getBookings(){
+        var b = safeParse(localStorage.getItem('veyraBookings'), []);
+        return Array.isArray(b) ? b : [];
+      }
+      function getReviews(){
+        var r = safeParse(localStorage.getItem('veyraReviews'), []);
+        return Array.isArray(r) ? r : [];
+      }
+
+      function calcStats(){
+        var specialists = getSpecialists().filter(function(s){ return s.visible !== false; });
+        var users = getUsers();
+        var bookings = getBookings();
+        var reviews = getReviews();
+
+        var el = document.getElementById('stat-specialists');
+        if(el) el.textContent = fmt(specialists.length);
+
+        el = document.getElementById('stat-bookings');
+        if(el) el.textContent = fmt(bookings.length);
+
+        el = document.getElementById('stat-users');
+        if(el) el.textContent = fmt(users.length);
+
+        // Average rating
+        var ratings = reviews.map(function(r){ return Number(r.stars) || 0; }).filter(function(x){ return x > 0; });
+        var avg = ratings.length ? (ratings.reduce(function(a,b){ return a + b; }, 0) / ratings.length).toFixed(1) : '0';
+        el = document.getElementById('stat-rating');
+        if(el) el.textContent = fmt(avg) + '<span class="star">★</span>';
+
+        // Hero avatars from specialist initials
+        var avatarBox = document.getElementById('hero-avatars');
+        var trustText = document.getElementById('hero-trust-text');
+        if(avatarBox){
+          avatarBox.innerHTML = '';
+          var shown = 0;
+          specialists.forEach(function(s){
+            if(shown >= 3) return;
+            var name = String(s.name || '?');
+            var letter = name.trim()[0] ? name.trim()[0].toUpperCase() : '?';
+            var span = document.createElement('span');
+            span.setAttribute('aria-hidden', 'true');
+            span.style.cssText = 'width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;margin-left:-8px;border:2px solid #FAF7F2;background:' + (shown===0?'#6C5B8E':shown===1?'#9B7ECC':'#2E2A3E');
+            span.textContent = letter;
+            avatarBox.appendChild(span);
+            shown++;
+          });
+          if(specialists.length > 3){
+            var more = document.createElement('span');
+            more.style.cssText = 'width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#2E2A3E;background:#fff;margin-left:-8px;border:2px solid #E8E2D8;';
+            more.textContent = '+' + (specialists.length - 3);
+            avatarBox.appendChild(more);
+          }
+        }
+        if(trustText && specialists.length > 0){
+          trustText.innerHTML = '<strong>' + avg + '/5</strong> — за ' + fmt(specialists.length) + ' фахівцями та їхніми відгуками';
+        }
+      }
+
+      calcStats();
+
+      // Listen for changes from other tabs (Firebase sync)
+      window.addEventListener('storage', calcStats);
+      window.addEventListener('veyra:cloud-sync', calcStats);
+    })();
+    </script>
+</body>
+</html>
